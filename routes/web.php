@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$namespacePrefix ='\\App\\Http\\Controllers\\';
 
-Route::get('/', function () {
-    return view('home');
+Route::group([
+    'as' => '/',
+    'prefix' => '/',
+], function () use ($namespacePrefix) {
+    Route::get('/', ['uses' => $namespacePrefix . 'HomeController@home', 'as' => 'home']);
 });
