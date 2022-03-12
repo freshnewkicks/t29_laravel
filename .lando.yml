@@ -1,0 +1,4 @@
+name: three29_tyler_duke
+recipe: laravel
+config:
+  webroot: public
